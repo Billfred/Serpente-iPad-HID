@@ -16,7 +16,7 @@ if notpin4 and notpin5:
     usb_cdc.disable()            # disable REPL
     usb_midi.disable()           # disable MIDI
 
-usb_hid.enable(devices=(usb_hid.Device.KEYBOARD))
+usb_hid.enable((usb_hid.KEYBOARD))
 
 pin4.deinit()
 pin5.deinit()
