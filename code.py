@@ -1,6 +1,5 @@
 """CircuitPython Essentials HID Keyboard example"""
 import time
-
 import board
 import digitalio
 import usb_hid
@@ -33,14 +32,11 @@ for pin in keypress_pins:
 ledR = digitalio.DigitalInOut(board.LED_R)
 ledR.direction = digitalio.Direction.OUTPUT
 
-print("Waiting for key pin...")
-
 while True:
     # Check each pin
     for key_pin in key_pin_array:
         if not key_pin.value:  # Is it grounded?
             i = key_pin_array.index(key_pin)
-            print("Pin #%d is grounded." % i)
 
             # Turn on the red LED
             ledR.value = True
